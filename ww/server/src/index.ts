@@ -1,13 +1,9 @@
-import { Elysia } from "elysia"
+import { Elysia,t } from "elysia"
+import { example } from "./controrller/example controller"
 
 const app = new Elysia().get("/", () => "Hello world")
-  .put("/about/:name", ({ params: { name } }) => {
-    return {
-
-      id: 'xxx',
-      name: name
-    }
-  }).listen(8000)
+  .use(example)
+  .listen(8000)
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
 )
