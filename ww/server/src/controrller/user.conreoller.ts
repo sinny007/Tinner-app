@@ -15,3 +15,13 @@ export const Usercontroller = new Elysia({
         text: "hello world"
     }
 })
+
+.get('/user', ({qurey,Auth}) => {
+    Auth.payload
+    return Userservice.get(Query, '')
+    
+    detail: { summary: "Get User" },
+     query:"paginatiom,
+     Response:"users",
+     isSightIn: true,
+})
