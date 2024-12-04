@@ -21,3 +21,9 @@ export const AccountService = {
     return newUser.touser()    }
    }
 }
+
+login: async function (loginDate: login): Promise<user>{
+    const loginUser = UserActivation.toUser()
+    await Userservice.updatelastActive(loginUser.id)
+    return loginUser
+}

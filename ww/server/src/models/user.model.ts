@@ -1,3 +1,7 @@
+import mongoose from "mongoose"
+import { calculateAge } from "../helper/date.helper"
+import { user } from "../types/user.type"
+
 const schema = new mongoose.Schema<IUserDocument, IUserModel>({
     username: { type: String, required: true, unique: true },
     password_hash: { type: String, required: true },
@@ -81,4 +85,4 @@ schema.statics.createUser = async function(registerDeta: register): Promise<user
     return newUser
 }
 
-export User = mongoose.model<UserDocument, UserModel>("User", schema)
+export User = mongoose.model<Document, UserModel>("User", schema)

@@ -10,3 +10,10 @@ console.log(
 )
 
 MongoDB.connect()
+
+.use(statigPlugin({
+  assets: "public/upload",
+  prefix: "img"
+}))
+
+.use(PhotoController)

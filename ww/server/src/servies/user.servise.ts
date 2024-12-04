@@ -28,10 +28,22 @@ export count userservise = {
     },
 
     getByUsername: function (username: string): Promise<user> {
-        throw new Error('not implement')
+        const user = await User.findOne({ username }).exec()
+        if (user) { 
+           return user.toUser()
+           throw new Error('not found')
+        }
     },
 
     _updateProfile: function (Newprofile:updateprofile, user_id: string): Promise<user> {
+        const user = User.fineByIdAndUpdate(user_id, {$set: newProfile} { new: true, runVa})
         throw new Error('not implement')
     },
+}
+
+//async updatelastActive(user_id: string): Promise<void> {
+    await User.updateOne(
+        { _id: new mongoose.Types.ObjectId(user_id) },
+        { $set: {last_active: new Date() } }
+    )
 }
