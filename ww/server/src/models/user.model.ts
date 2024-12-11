@@ -14,7 +14,7 @@ const schema = new mongoose.Schema<IUserDocument, IUserModel>({
     location: { type: String },
 
     // todo: implement photo feature
-    // photos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Photo' }],
+     photos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Photo' }],
     // todo: implement like feature
     // followers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     // following: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
@@ -61,7 +61,7 @@ schema.methods.toUser = function (): user {
         looking_for: this.looking_for,
         location: this.location,
         // todo: photo feature
-        // photos: userPhotos,
+         photos: userPhotos,
         // todo: like feature
         // following: following,
         // followers: followers,

@@ -26,3 +26,5 @@ export type _userPaginator = Static<typeof _userPagination
 export type _userPagination = Static<typeof _userPagination>
 export type _userPaginator = Static<typeof _userPaginaor
 export type user = Static<typeof _user>
+
+photos: t.Optional(t.Array(_photo))
